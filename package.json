@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Daiki-Konno/KeyStory/issues"
   },
-  "homepage": "https://github.com/Daiki-Konno/KeyStory#readme"
+  "homepage": "https://github.com/Daiki-Konno/KeyStory#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
