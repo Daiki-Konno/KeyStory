@@ -7,54 +7,12 @@ $prj-ns: '.ks';
 //== Colors
 //
 //## Define color
-$colorKey: #135ec5;
-$colorKeyDark: #002c69;
-$colorKeyLight: #6fbcfc;
+$theme-color-white:#F3F3F3;
+$theme-color-lightblue:#97D8DF;
+$theme-color-navy:#034B73;
+$theme-color-gray:#B8B8B8;
+$theme-color-blue:#6FB6E3;
 
-$colorSub: #89aee2;
-
-$colorAttn: #d82d00;
-$colorAttnPink: #fee9ee;
-$colorAttnLight: #fe9e42;
-$colorAttnDark: #cb7e35;
-$colorAttnExDark: #999;
-$colorAttnExLight: #ccc;
-$colorDisabled: #e5e5e5;
-
-// TODO
-$colorSubLight: #bfbfbf;
-$colorSubExLight: #f5f5f5;
-
-$colorFill: #c5e4fe;
-$colorFillWhite: #fff;
-$colorFillDark: #333;
-$colorFillLight: #f1f8fd;
-$colorFillExlight: #f0f0f0;
-$colorFillTable: #e5ebec;
-
-$colorBorder: #666;
-$colorBorderWhite: #fff;
-$colorBorderLight: #999;
-$colorBorderExlight: #f0f0f0;
-$colorBorderTab: #c6cbcf;
-$colorBorderTable: #efefef;
-$colorBorderform: #c3c3c3;
-$colorBorderRadio: #cdcdcd;
-$colorBorderAccordion: #ccc;
-$colorBorderAttnLabel: #da390f;
-$colorBorderBlockLabel: #d3d1d3;
-
-$colorFont: #333;
-$colorFontWhite: #fff;
-$colorFontLight: #666;
-$colorFontExlight: #ccc;
-$colorFontDark: #999;
-$colorFontBlack: #000;
-
-$colorLabelCurrent: #0062b3;
-
-$colorLink: $colorFont;
-$colorLinkHover: #3f7fd3;
 
 //== Grid system
 //
