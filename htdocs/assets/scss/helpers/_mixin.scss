@@ -1,0 +1,203 @@
+// This is mixin scss file.
+// I hope you'll add pretty mixin.
+
+@mixin media($breakpoint) {
+  @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+// Font Sizing
+@mixin fontSize($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue * 0.1) + rem;
+}
+
+// Element Hidden
+@mixin txtHidden {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// Elemant Flatten
+@mixin flatten {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin arrowTop($size, $color) {
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: ($size * 2);
+    height: ($size * 2);
+    margin-top: ($size * -1);
+    border: 1px solid $color;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: "";
+    transform: rotate(-45deg);
+  }
+}
+
+
+@mixin arrowRight($size, $color) {
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: ($size * 2);
+    height: ($size * 2);
+    margin-top: ($size * -1);
+    border: 1px solid $color;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: "";
+    transform: rotate(45deg);
+  }
+}
+
+@mixin arrowBottom($size, $color) {
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: ($size * 2);
+    height: ($size * 2);
+    margin-top: ($size * -2);
+    border: 1px solid $color;
+    border-top-width: 0;
+    border-right-width: 0;
+    content: "";
+    transform: rotate(-45deg);
+  }
+}
+
+// 角丸ボタンmixin
+@mixin button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+  color: $colorFontWhite;
+  text-align: center;
+  text-decoration: none!important;
+  padding: 0.25em 10px;
+  @include fontSize($fontSizeMd);
+  @include media(lg) {
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: $colorFontWhite;
+    }
+  }
+  &.is-disabled,
+  &:disabled {
+    color: $colorFontDark!important;
+    background-color: $colorDisabled!important;
+    pointer-events: none;
+  }
+}
+
+// 丸矢印
+@mixin radius-arrow-md {
+  position: relative;
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $colorSub;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 2px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border: 1px solid $colorBorderWhite;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+  }
+  &:hover {
+    &::before {
+      background-color: $colorKey;
+      transition: all  0.4s ease;
+    }
+  }
+}
+
+@mixin radius-arrow-sm {
+  position: relative;
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $colorSub;
+    @include media(lg) {
+      left: 0;
+      right: auto;
+    }
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 6px;
+    margin: auto;
+    width: 4px;
+    height: 4px;
+    border: 1px solid $colorBorderWhite;
+    border-left: transparent;
+    border-bottom: transparent;
+    transform: rotate(45deg);
+    @include media(lg) {
+      left: 4px;
+      right: auto;
+    }
+  }
+  &:hover {
+    &::before {
+      background-color: $colorKey;
+      transition: all  0.4s ease;
+    }
+  }
+}
+
+// Opcitify for IE7, 8
+// @mixin opacity($amout) {
+//   $ieVal: $amout*100;
+//   opacity: $amout;
+//   filter: alpha(opacity=$ieVal);
+// }
+
+// ------------------------------------------------------------
+// Omega Reset
+// ------------------------------------------------------------
+
+// @mixin omega-reset($nth,$grid:12) {
+//   &:nth-child(#{$nth}) { margin-right: flex-gutter($grid); }
+//   &:nth-child(#{$nth}+1) { clear: none }
+// }
